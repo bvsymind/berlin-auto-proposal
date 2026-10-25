@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Generator Proposal PLTS — Berlin Energi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/app.css" />
+  </head>
+  <body>
+    <header>
+      <div class="lg"><img id="hdrLogo" alt="Berlin Energi" /></div>
+      <h1>
+        Generator Proposal PLTS<small
+          >Unggah workbook LHS + BOQ → periksa data → unduh proposal</small
+        >
+      </h1>
+      <div class="grp" role="group" aria-label="Proyek">
+        <button id="btnBaru" title="Kosongkan semua data dan mulai proposal baru">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 5v14M5 12h14" /></svg
+          ><span>Baru</span>
+        </button>
+        <button id="btnBuka" title="Buka lagi proyek yang pernah disimpan (file .proyek.json)">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            /></svg
+          ><span>Buka</span>
+        </button>
+        <button
+          id="btnSimpan"
+          title="Simpan semua data (termasuk foto & isian) ke file .proyek.json agar bisa diedit lagi — Ctrl+S"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 3h11l3 3v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+            <path d="M7 3v5h8V3M7 21v-7h10v7" /></svg
+          ><span>Simpan</span>
+        </button>
+      </div>
+      <button id="btnLebar" title="Sembunyikan panel kiri agar pratinjau proposal lebih lebar">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4" /></svg
+        ><span id="lblLebar">Lebarkan</span>
+      </button>
+      <div class="grp" role="group" aria-label="Hasil">
+        <button id="btnPDF" title="Cetak atau simpan proposal sebagai PDF (A4)">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 9V3h12v6" />
+            <rect x="3" y="9" width="18" height="8" rx="2" />
+            <path d="M6 14h12v7H6z" /></svg
+          ><span>Cetak PDF</span>
+        </button>
+        <button
+          id="btnHTML"
+          class="pri"
+          title="Unduh proposal interaktif (.html) untuk dikirim ke pelanggan"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12M7 10l5 5 5-5" />
+            <path d="M4 19h16" /></svg
+          ><span>Unduh Proposal</span>
+        </button>
+      </div>
+      <input type="file" id="fileProyek" accept=".json" hidden />
+    </header>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="modal" role="dialog" aria-modal="true"><div class="box" id="modalBox"></div></div>
+    <main>
+      <div id="panel">
+        <div class="sec">
+          <h3><span class="n">1</span>Unggah Workbook LHS + BOQ</h3>
+          <div class="bd">
+            <div id="drop">
+              <b>Tarik workbook BMI (.xlsx) ke sini</b
+              ><span
+                >Sheet LHS + BOQ dibaca otomatis, foto diambil dari link Google Drive · 1 file = 1
+                opsi (mis. Hybrid &amp; On-Grid)</span
+              >
+            </div>
+            <input
+              type="file"
+              id="fileBOQ"
+              accept=".pdf,.xlsx,.xls,.xlsm,.csv,.ods"
+              multiple
+              hidden
+            />
+            <div id="upStatus"></div>
+            <div id="opsiList"></div>
+          </div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">2</span>Sales PIC, PSH &amp; Isi Proposal</h3>
+          <div class="bd" id="fSales"></div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">3</span>Laporan Survey &amp; Foto Tambahan</h3>
+          <div class="bd">
+            <div id="dropSv">
+              <b>Tarik laporan survey & foto ke sini</b
+              ><span
+                >PDF, Word (.docx), Excel / Google Form, atau foto JPG/PNG · bisa beberapa file
+                sekaligus</span
+              >
+            </div>
+            <input
+              type="file"
+              id="fileSurvey"
+              accept=".pdf,.docx,.xlsx,.xls,.xlsm,.csv,.ods,.txt,image/*"
+              multiple
+              hidden
+            />
+            <div id="svStatus" class="muted" style="font-size: 12px; margin: 8px 0"></div>
+            <div id="fSurvey"></div>
+          </div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">4</span>Data Pelanggan</h3>
+          <div class="bd" id="fPelanggan"></div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">5</span>Data Listrik PLN</h3>
+          <div class="bd" id="fPLN"></div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">6</span>Komponen & Produk</h3>
+          <div class="bd" id="fKomp"></div>
+        </div>
+        <div class="sec closed">
+          <h3><span class="n">7</span>Asumsi Perhitungan</h3>
+          <div class="bd" id="fAsumsi"></div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">8</span>Rekomendasi & Penutup</h3>
+          <div class="bd" id="fRek"></div>
+        </div>
+        <div class="sec">
+          <h3><span class="n">✓</span>Pemeriksaan <span id="healthCount"></span></h3>
+          <div class="bd" id="health"></div>
+        </div>
+      </div>
+      <div id="previewWrap"><iframe id="preview" title="Pratinjau proposal"></iframe></div>
+    </main>
+    <script src="vendor/pdf.min.js"></script>
+    <script src="vendor/pdf.worker.min.js"></script>
+    <script src="vendor/xlsx.full.min.js"></script>
+    <script src="data/assets.js"></script>
+    <script src="data/pengaturan.js"></script>
+    <script src="data/produk.js"></script>
+    <script src="data/portofolio.js"></script>
+    <script src="data/akses.js"></script>
+    <script src="js/auth/account.js"></script>
+    <script src="js/parsers/boq/common.js"></script>
+    <script src="js/parsers/boq/items.js"></script>
+    <script src="js/parsers/boq/quotation.js"></script>
+    <script src="js/parsers/boq/components.js"></script>
+    <script src="js/parsers/boq/files.js"></script>
+    <script src="js/parsers/boq/api.js"></script>
+    <script src="js/parsers/boq.js"></script>
+    <script src="js/parsers/survey/fields.js"></script>
+    <script src="js/parsers/survey/text.js"></script>
+    <script src="js/parsers/survey/images.js"></script>
+    <script src="js/parsers/survey/docx.js"></script>
+    <script src="js/parsers/survey/files.js"></script>
+    <script src="js/parsers/survey/api.js"></script>
+    <script src="js/parsers/survey.js"></script>
+    <script src="js/parsers/berlin/worksheet.js"></script>
+    <script src="js/parsers/berlin/lhs.js"></script>
+    <script src="js/parsers/berlin/boq.js"></script>
+    <script src="js/parsers/berlin/quotation.js"></script>
+    <script src="js/parsers/berlin/savings.js"></script>
+    <script src="js/parsers/berlin/workbook.js"></script>
+    <script src="js/parsers/berlin/api.js"></script>
+    <script src="js/parsers/berlin.js"></script>
+    <script src="js/calculations/engine.js"></script>
+    <script src="js/proposal/context.js"></script>
+    <script src="js/proposal/icons.js"></script>
+    <script src="js/proposal/calculations.js"></script>
+    <script src="js/proposal/charts.js"></script>
+    <script src="js/proposal/ui.js"></script>
+    <script src="js/proposal/sections/cover.js"></script>
+    <script src="js/proposal/sections/summary.js"></script>
+    <script src="js/proposal/sections/survey-design.js"></script>
+    <script src="js/proposal/sections/products-production.js"></script>
+    <script src="js/proposal/sections/financial.js"></script>
+    <script src="js/proposal/analysis.js"></script>
+    <script src="js/proposal/sections/comparison.js"></script>
+    <script src="js/proposal/sections/environment-offer.js"></script>
+    <script src="js/proposal/sections/company.js"></script>
+    <script src="js/proposal/sections/closing.js"></script>
+    <script src="js/proposal/sections/appendix.js"></script>
+    <script src="js/proposal/render.js"></script>
+    <script src="js/proposal/interactions.js"></script>
+    <script src="js/proposal/styles.js"></script>
+    <script src="js/proposal/startup.js"></script>
+    <script src="js/proposal/runtime.js"></script>
+    <script src="js/proposal/export.js"></script>
+    <script src="js/app/state.js"></script>
+    <script src="js/app/imports/options.js"></script>
+    <script src="js/app/imports/berlin.js"></script>
+    <script src="js/app/images.js"></script>
+    <script src="js/app/imports/files.js"></script>
+    <script src="js/app/imports/survey.js"></script>
+    <script src="js/app/recommendation.js"></script>
+    <script src="js/app/proposal-data.js"></script>
+    <script src="js/app/preview.js"></script>
+    <script src="js/app/feedback.js"></script>
+    <script src="js/app/forms/helpers.js"></script>
+    <script src="js/app/forms/imports.js"></script>
+    <script src="js/app/forms/project.js"></script>
+    <script src="js/app/forms/components.js"></script>
+    <script src="js/app/forms/settings.js"></script>
+    <script src="js/app/events.js"></script>
+    <script src="js/app/uploads.js"></script>
+    <script src="js/app/toolbar.js"></script>
+    <script src="js/app/account.js"></script>
+    <script src="js/app/startup.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

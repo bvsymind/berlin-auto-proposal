@@ -1,0 +1,101 @@
+{
+  "empty": {
+    "state": "704c48143158e649fd66cdbc6e8ac3174620a31fa523072f4e8983c7305318cf",
+    "panel": "a75ae23083bd07727c6d31dc008cc93fb6f058b1923fb027cab48c3cdc4fb2f9",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "2e2e02256110136a77bf445ccea419e23e0c89c3d9e1086481627b95a0b36445",
+    "proposal": "a8657526614cf2025083f92c44a1bdaf1cfdcca4834c77cafa13b7e5c72355dd",
+    "proposalStyles": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "workbook": {
+    "state": "c698b13c7debad3e3e18e6d6b1edfd3a18854a9c380f47e803711acbe582fc39",
+    "panel": "92628636fc02483abbc3ad8524aa83942a5b6e2a02c6d02754d578f99d1aa7d6",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "5c9268dcac870816469ac6d2a815b03f0a5e87d1e6cd07fdf84a34e62526abf0",
+    "proposalStyles": "1a833b28a8ff50cbbf6db433aa11958d5497c1c6041588777fb221f42b417945"
+  },
+  "edited": {
+    "state": "051cda56a0bdf7db3c45afd959df7dd97d9bdd4e7ece38379517a2e3d081958f",
+    "panel": "a6863caab437806d91342b127fcfcb32997832c5b6a8db30c523a067e3e1486d",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "4b4beae4ae94fe5c5f9b97b5b44c7527ff6817be91898d315841ed9322eef498",
+    "proposalStyles": "bd6e7ba24bb711cfa177e79f349c7e24540f13afb96ae994e90dadc13f8b1536"
+  },
+  "simulation-reset": {
+    "state": "051cda56a0bdf7db3c45afd959df7dd97d9bdd4e7ece38379517a2e3d081958f",
+    "panel": "a6863caab437806d91342b127fcfcb32997832c5b6a8db30c523a067e3e1486d",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "4ab3b0bbec539575214f2205b8901f2962a3634421b54d133dcd916be61bf42e",
+    "proposalStyles": "bd6e7ba24bb711cfa177e79f349c7e24540f13afb96ae994e90dadc13f8b1536"
+  },
+  "multiple-options": {
+    "state": "c610aa447bea914b5a351753f239bad2961c44feefc0ccf6e6295be71ce1083e",
+    "panel": "9dbc97c29903b7e6289eccc017d37f66e92789126ece58627d3332e288f8e97d",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "9969ae12a8530cb728ac7d2c27978326175330bcfa9a7adec5d2bb94e9f1c659",
+    "proposalStyles": "bd6e7ba24bb711cfa177e79f349c7e24540f13afb96ae994e90dadc13f8b1536"
+  },
+  "manual-recommendation": {
+    "state": "ed188969b95798d178a4e0b57034e4137f828e5c12e048bcc1d09ad571cc13b0",
+    "panel": "3a8eb73a156146133787d870999460bdbeefaa11063615e1e931edb4fcdeaaf9",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "1705b7e8c5f6a8e269693656164161ab443ab666f1fc623110e4b71c4d505ef4",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  },
+  "survey": {
+    "state": "305ece523d6671d25b7bc885f8fe9e49a7763cdd9a0d0bfd285790a8b68e8622",
+    "panel": "bcc56574fdf80f599c53009e69df23c2cc77c08035d8e47e102cc260959707de",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "dd1aacca63a6ab7cab80652bf9dcea716889821c8646d8b790c278b6ee7aa591",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  },
+  "survey-attachments": {
+    "state": "20cd88ff3e22a45c25f38774f197d180af33a3b05501ff98744d1b58433cb4b9",
+    "panel": "20f63a3ed6b167815917ead2fc1afbbf85be0c0641fdb3b27f378ba7f8e583e6",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "e3a8dadce96ee499b84cd3dadaee7baa1dfc6f325a206ec1db069dd4c79ba02f",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  },
+  "reopened": {
+    "state": "34a4e828625dc96ab9e1df7328f26df1f80eda28a6b7d3cd97e4871fbdb5bb17",
+    "panel": "f73b3b3e46481e99a69086e33c805cdeadde5c9a0be21bd6db9bc5e196a9eed6",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "e3a8dadce96ee499b84cd3dadaee7baa1dfc6f325a206ec1db069dd4c79ba02f",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  },
+  "local-storage": {
+    "state": "34a4e828625dc96ab9e1df7328f26df1f80eda28a6b7d3cd97e4871fbdb5bb17",
+    "panel": "a5f6f259c19f148a3ba92b4cd45c96abf89eed4e14e1cb28a94a2422b364270d",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "e3a8dadce96ee499b84cd3dadaee7baa1dfc6f325a206ec1db069dd4c79ba02f",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  },
+  "standalone": {
+    "doc": "f86af3963f59044ff07dba38225b73e90e9c26f5fc59e174e99fc7dc4070df62"
+  },
+  "wide": {
+    "state": "34a4e828625dc96ab9e1df7328f26df1f80eda28a6b7d3cd97e4871fbdb5bb17",
+    "panel": "338487a4c28fe74a2fe76b4597bf965633c6410cb856357b90b2448ed107e39a",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "d00cce3aae9f0376aa0a868083a2f8cb83c63f6ef910c66ee9a490549495cd65",
+    "proposal": "3b9e6396c12f00893567db34e3bbe793f6749f13f37b46a3dcb0c82627d4786a",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  },
+  "mobile": {
+    "state": "34a4e828625dc96ab9e1df7328f26df1f80eda28a6b7d3cd97e4871fbdb5bb17",
+    "panel": "338487a4c28fe74a2fe76b4597bf965633c6410cb856357b90b2448ed107e39a",
+    "styles": "d1b7783d436b2e57032386ae007f13a3c1802276a4d859c5182d4b1231956d35",
+    "toolbar": "f3e9a95a473dfc30b84b428fed52d51ebcabab66bd6d955ef1f0bef48c832ee1",
+    "proposal": "3b9e6396c12f00893567db34e3bbe793f6749f13f37b46a3dcb0c82627d4786a",
+    "proposalStyles": "8ed3d4a6ce9afe75f7a000cc99d86e0083743a311bc74de17f03ffc4845ddf7f"
+  }
+}

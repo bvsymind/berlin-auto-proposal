@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.verification/
+vendor/
+data/assets.js
+data/portofolio.js
+examples/
+tests/fixtures/
+
